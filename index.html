@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Kushwah | AI Engineer</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+
+        :root {
+            --bg: #020617;
+            --card-bg: rgba(30, 41, 59, 0.5);
+            --accent-blue: #38bdf8;
+            --accent-purple: #818cf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background: var(--bg); 
+            color: var(--text-main); 
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            padding: 40px 10px;
+            overflow-x: hidden;
+        }
+
+        /* Ambient Background Glow */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -10%; left: -10%; width: 40%; height: 40%;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .bento-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            padding: 28px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bento-card:hover {
+            transform: scale(1.02);
+            border-color: var(--accent-blue);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Grid Assignments */
+        .hero { grid-column: span 3; background: linear-gradient(135deg, rgba(30,41,59,0.8) 0%, rgba(15,23,42,0.9) 100%); }
+        .socials { grid-column: span 1; justify-content: space-around; }
+        .projects { grid-column: span 2; }
+        .skills { grid-column: span 1; }
+        .metrics { grid-column: span 1; }
+        .leadership { grid-column: span 2; }
+        .interests { grid-column: span 2; }
+
+        h1 { font-size: 3rem; font-weight: 800; letter-spacing: -2px; margin-bottom: 10px; background: linear-gradient(to right, #fff, var(--accent-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        h2 { font-size: 1.1rem; color: var(--accent-blue); display: flex; align-items: center; gap: 8px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 2px; }
+        p { color: var(--text-muted); line-height: 1.6; }
+
+        .kpi { font-size: 2rem; font-weight: 800; color: var(--text-main); }
+        .kpi-label { font-size: 0.8rem; color: var(--accent-purple); font-weight: 600; }
+
+        .tag {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-blue);
+            padding: 6px 14px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin: 4px;
+            display: inline-block;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            background: rgba(255,255,255,0.03);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            transition: 0.3s;
+        }
+        .btn:hover { background: var(--accent-blue); color: var(--bg); border-color: var(--accent-blue); }
+
+        @media (max-width: 900px) {
+            .container { grid-template-columns: 1fr; }
+            .hero, .socials, .projects, .skills, .metrics, .leadership, .interests { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="bento-card hero">
+        <h2><i data-lucide="brain-circuit"></i> AI Researcher</h2>
+        <h1>Harsh Kushwah</h1>
+        <p>Integrated M.Tech in <b>Artificial Intelligence & Machine Learning</b> at Vellore Institute of Technology[cite: 4]. Building autonomous systems with high-precision computer vision and deep learning architectures[cite: 10, 11].</p>
+    </div>
+
+    <div class="bento-card socials">
+        <a href="mailto:kushwah.harsh1108@gmail.com" class="btn"><i data-lucide="mail"></i> Email</a>
+        <a href="#" class="btn"><i data-lucide="github"></i> GitHub</a>
+        <a href="#" class="btn"><i data-lucide="linkedin"></i> LinkedIn</a>
+    </div>
+
+    <div class="bento-card metrics">
+        <h2><i data-lucide="bar-chart-3"></i> Academic Rank</h2>
+        <div class="kpi">8.36</div>
+        <div class="kpi-label">Cumulative GPA </div>
+        <div style="margin-top: 15px;">
+            <div class="kpi">86.6%</div>
+            <div class="kpi-label">Class XII & X Excellence </div>
+        </div>
+    </div>
+
+    <div class="bento-card skills">
+        <h2><i data-lucide="code-2"></i> Tech Stack</h2>
+        <div style="display: flex; flex-wrap: wrap;">
+            <span class="tag">Python (Adv) [cite: 9]</span>
+            <span class="tag">PyTorch [cite: 11]</span>
+            <span class="tag">TensorFlow [cite: 11]</span>
+            <span class="tag">MediaPipe [cite: 11]</span>
+            <span class="tag">OpenCV [cite: 11]</span>
+            <span class="tag">AWS [cite: 12]</span>
+        </div>
+    </div>
+
+    <div class="bento-card projects">
+        <h2><i data-lucide="mouse-pointer-click"></i> Virtual Mouse Control</h2>
+        <p>Utilized MediaPipe’s 21-point hand landmark detection to achieve <b>98% accuracy</b>. Implemented Kalman Filtering to ensure jitter-free 1080p control[cite: 21].</p>
+        <div style="margin-top: auto; padding-top: 10px;">
+            <span class="tag">30+ FPS Performance </span>
+        </div>
+    </div>
+
+    <div class="bento-card projects">
+        <h2><i data-lucide="scan-line"></i> Pneumonia Detection</h2>
+        <p>Developed a CNN to classify lung X-rays with <b>93% accuracy</b>[cite: 24]. Optimized with Image Augmentation and Dropout layers to mitigate overfitting[cite: 25].</p>
+        <div style="margin-top: auto; padding-top: 10px;">
+            <span class="tag">PyTorch [cite: 22]</span><span class="tag">Medical AI</span>
+        </div>
+    </div>
+
+    <div class="bento-card leadership">
+        <h2><i data-lucide="users"></i> Leadership & Impact</h2>
+        <p><b>Financial Head @ Blockchain Club (ITJOBXS)</b>[cite: 27, 28]. Managed budgets for 5+ major events and boosted registrations by <b>30%</b> through strategic asset design[cite: 30, 31].</p>
+    </div>
+
+    <div class="bento-card interests">
+        <h2><i data-lucide="trophy"></i> Discipline & Teamwork</h2>
+        <p>Represented school in <b>Football, Cricket, and Badminton</b>[cite: 33]. Focus on agility and high-pressure coordination.</p>
+        <div style="margin-top: 10px;">
+            <span class="tag">Salesforce AI Specialist [cite: 36]</span>
+            <span class="tag">UMich Machine Learning [cite: 37]</span>
+        </div>
+    </div>
+</div>
+
+<script>
+    lucide.createIcons();
+</script>
+</body>
+</html>
